@@ -1,17 +1,19 @@
 Summary:	Experimental new features for GTK+ and GLib
 Name:		libdazzle
-Version:	3.28.0
+Version:	3.30.2
 Release:	1
 License:	GPL v3
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libdazzle/3.28/%{name}-%{version}.tar.xz
-# Source0-md5:	3207d4a69b91f6b8b99f8fa283713d6a
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libdazzle/3.30/%{name}-%{version}.tar.xz
+# Source0-md5:	24e2e1b914a34f5b8868a9507d1f3c4c
 BuildRequires:	glib2-devel >= 2.56.0
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	gtk+3-devel
 BuildRequires:	gtk-doc
 BuildRequires:	meson >= 0.40.1
+BuildRequires:	ninja
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.727
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala
 BuildRequires:	xz
@@ -58,12 +60,12 @@ API libdazzle dla języka Vala.
 
 %build
 %meson build
-%meson_build -C build
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%meson_install -C build
+%ninja_install -C build
 
 %clean
 rm -rf $RPM_BUILD_ROOT
