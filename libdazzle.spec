@@ -1,7 +1,7 @@
 Summary:	Experimental new features for GTK+ and GLib
 Name:		libdazzle
 Version:	3.30.2
-Release:	1
+Release:	2
 License:	GPL v3
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libdazzle/3.30/%{name}-%{version}.tar.xz
