@@ -1,11 +1,11 @@
 Summary:	Experimental new features for GTK+ and GLib
 Name:		libdazzle
-Version:	3.30.2
-Release:	2
+Version:	3.32.2
+Release:	1
 License:	GPL v3
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libdazzle/3.30/%{name}-%{version}.tar.xz
-# Source0-md5:	24e2e1b914a34f5b8868a9507d1f3c4c
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libdazzle/3.32/%{name}-%{version}.tar.xz
+# Source0-md5:	b5c99a8f483a0defe7c7124a3220e412
 BuildRequires:	glib2-devel >= 2.56.0
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	gtk+3-devel
