@@ -1,0 +1,10 @@
+--- libdazzle-3.34.0/doc/meson.build.orig	2019-09-10 03:09:21.000000000 +0200
++++ libdazzle-3.34.0/doc/meson.build	2019-09-12 15:47:25.938596547 +0200
+@@ -42,6 +42,7 @@
+           scan_args: [
+                        '--rebuild-types',
+                        '--ignore-headers=' + ' '.join(private_headers),
++                       '--ignore-decorators', '__attribute__ \(\(aligned\(8\)\)\)'
+                      ],
+        fixxref_args: [
+                        '--html-dir=@0@'.format(docpath),
