@@ -1,12 +1,12 @@
 Summary:	Experimental new features for GTK+ and GLib
 Summary(pl.UTF-8):	Nowe, eksperymentalne funkcje dla GTK+ i GLiba
 Name:		libdazzle
-Version:	3.34.1
+Version:	3.36.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libdazzle/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	e796a92dd3f529616ed388c15208359b
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libdazzle/3.36/%{name}-%{version}.tar.xz
+# Source0-md5:	154be45a6aac020e7d59f477bd7cafcf
 Patch0:		%{name}-doc.patch
 URL:		https://gitlab.gnome.org/GNOME/libdazzle
 BuildRequires:	glib2-devel >= 1:2.56.0
@@ -57,7 +57,7 @@ Summary(pl.UTF-8):	API libdazzle dla języka Vala
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	vala
-%if "%{_rpmversion}" >= "5"
+%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
 %endif
 
@@ -71,7 +71,7 @@ API libdazzle dla języka Vala.
 Summary:	API documentation for libdazzle library
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libdazzle
 Group:		Documentation
-%if "%{_rpmversion}" >= "5"
+%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
 %endif
 
