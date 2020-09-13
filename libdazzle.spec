@@ -1,19 +1,23 @@
+#
+# Conditional build:
+%bcond_without	apidocs	# API documentation
+
 Summary:	Experimental new features for GTK+ and GLib
 Summary(pl.UTF-8):	Nowe, eksperymentalne funkcje dla GTK+ i GLiba
 Name:		libdazzle
-Version:	3.36.0
+Version:	3.38.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libdazzle/3.36/%{name}-%{version}.tar.xz
-# Source0-md5:	154be45a6aac020e7d59f477bd7cafcf
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libdazzle/3.38/%{name}-%{version}.tar.xz
+# Source0-md5:	7dee045bef026ff26af9b16f8252936b
 Patch0:		%{name}-doc.patch
 URL:		https://gitlab.gnome.org/GNOME/libdazzle
 BuildRequires:	glib2-devel >= 1:2.56.0
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	gtk+3-devel >= 3.24.0
-BuildRequires:	gtk-doc
-BuildRequires:	meson >= 0.49.0
+%{?with_apidocs:BuildRequires:	gtk-doc}
+BuildRequires:	meson >= 0.50.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
@@ -87,7 +91,7 @@ Dokumentacja API biblioteki libdazzle.
 
 %build
 %meson build \
-	-Denable_gtk_doc=true
+	%{?with_apidocs:-Denable_gtk_doc=true}
 
 %ninja_build -C build
 
@@ -121,6 +125,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/vala/vapi/libdazzle-1.0.deps
 %{_datadir}/vala/vapi/libdazzle-1.0.vapi
 
+%if %{with apidocs}
 %files apidocs
 %defattr(644,root,root,755)
 %{_gtkdocdir}/libdazzle
+%endif
