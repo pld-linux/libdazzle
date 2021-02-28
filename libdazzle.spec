@@ -61,9 +61,7 @@ Summary(pl.UTF-8):	API libdazzle dla języka Vala
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	vala
-%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
-%endif
 
 %description -n vala-libdazzle
 libdazzle API for Vala language.
@@ -75,9 +73,7 @@ API libdazzle dla języka Vala.
 Summary:	API documentation for libdazzle library
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libdazzle
 Group:		Documentation
-%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 API documentation for libdazzle library.
