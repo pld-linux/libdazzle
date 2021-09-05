@@ -5,14 +5,15 @@
 Summary:	Experimental new features for GTK+ and GLib
 Summary(pl.UTF-8):	Nowe, eksperymentalne funkcje dla GTK+ i GLiba
 Name:		libdazzle
-Version:	3.40.0
+Version:	3.42.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Libraries
-Source0:	https://download.gnome.org/sources/libdazzle/3.40/%{name}-%{version}.tar.xz
-# Source0-md5:	14381d1c64f14655da61c6094356d1d9
+Source0:	https://download.gnome.org/sources/libdazzle/3.42/%{name}-%{version}.tar.xz
+# Source0-md5:	8604b1c55a1da934ec1bff72f7e30b8e
 Patch0:		%{name}-doc.patch
 URL:		https://gitlab.gnome.org/GNOME/libdazzle
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.56.0
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	gtk+3-devel >= 3.24.0
@@ -97,13 +98,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %ninja_install -C build
 
+%find_lang %{name}-1.0
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files
+%files -f %{name}-1.0.lang
 %defattr(644,root,root,755)
 %doc AUTHORS CONTRIBUTING.md NEWS README.md
 %attr(755,root,root) %{_bindir}/dazzle-list-counters
